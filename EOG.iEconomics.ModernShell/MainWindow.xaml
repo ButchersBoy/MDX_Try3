@@ -1,0 +1,98 @@
+﻿<ma:MetroWindow x:Class="EOG.iEconomics.ModernShell.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                xmlns:ma="http://metro.mahapps.com/winfx/xaml/controls"
+                xmlns:local="clr-namespace:EOG.iEconomics.ModernShell"
+                xmlns:common="clr-namespace:EOG.iEconomics.Common;assembly=EOG.iEconomics.Common"
+                xmlns:views="clr-namespace:EOG.iEconomics.ModernShell.Views"
+                WindowTitleBrush="{DynamicResource TitleBarBackgroundBrush}"
+                TitlebarHeight="45"
+                RightWindowCommandsOverlayBehavior="Always"
+                WindowState="Maximized"
+                ShowTitleBar="True"
+                mc:Ignorable="d"
+                Background="{DynamicResource MaterialDesignPaper}"
+                Title=""
+                Height="350"
+                Width="525">
+    <ma:MetroWindow.TitleTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0"  HorizontalAlignment="Stretch"
+                        Orientation="Horizontal"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                    <ToggleButton HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignHamburgerToggleButton}"
+                              Foreground="White"
+                              Height="25"
+                              Margin="0,15,0,8"
+                              IsChecked="{Binding DataContext.IsHamburgerMenuOpen, RelativeSource={RelativeSource AncestorType={x:Type ma:MetroWindow}}}"
+                              VerticalAlignment="Center"
+                              x:Name="MenuToggleButton" />
+                    <TextBlock HorizontalAlignment="Left"
+                           Margin="10,0,0,0"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           FontSize="22">iCool</TextBlock>
+
+                </StackPanel>
+                <StackPanel Grid.Column="1"  HorizontalAlignment="Right"
+                        Orientation="Horizontal"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                    <TextBlock  HorizontalAlignment="Right"  Foreground="White"
+                           VerticalAlignment="Center">
+                            <Hyperlink
+                                Command="{Binding DataContext.LoginAsCommand, RelativeSource={RelativeSource AncestorType={x:Type ma:MetroWindow}}}"
+                                Foreground="White" TextDecorations="{Binding DataContext.IsLoginAsEnabled, RelativeSource={RelativeSource AncestorType={x:Type ma:MetroWindow}}, Converter={StaticResource TextDecConverter}}"
+                                       IsEnabled="{Binding DataContext.IsLoginAsEnabled, RelativeSource={RelativeSource AncestorType={x:Type ma:MetroWindow}}}">
+                               <TextBlock Text="{Binding DataContext.LoggedInAs, RelativeSource={RelativeSource AncestorType={x:Type ma:MetroWindow}}}"></TextBlock>
+                           </Hyperlink>
+                </TextBlock>
+
+                </StackPanel>
+            </Grid>
+         
+          
+        </DataTemplate>
+    </ma:MetroWindow.TitleTemplate>
+    <materialDesign:DialogHost Identifier="RootDialog">
+        <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding IsHamburgerMenuOpen}">
+            <materialDesign:DrawerHost.LeftDrawerContent>
+                <DockPanel MinWidth="212">
+                    <ListBox x:Name="DemoItemsListBox"
+                             Margin="0 16 0 16"
+                             SelectedIndex="0">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="common:ContentItem">
+                                <TextBlock Text="{Binding Name}"
+                                           Margin="32 0 32 0" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <common:ContentItem Name="Cool Thing 1">
+                            <common:ContentItem.Content>
+                                <views:SampleView1/>
+                            </common:ContentItem.Content>
+                        </common:ContentItem>
+                        <common:ContentItem Name="Cool Thing 2">
+                            <common:ContentItem.Content>
+                                <views:SampleView2 />
+                            </common:ContentItem.Content>
+                        </common:ContentItem>
+                        <common:ContentItem Name="Cool Thing 3" />
+                    </ListBox>
+                </DockPanel>
+            </materialDesign:DrawerHost.LeftDrawerContent>
+            <ContentControl Margin="16"
+                            Content="{Binding ElementName=DemoItemsListBox, Path=SelectedItem.Content}" />
+
+        </materialDesign:DrawerHost>
+        
+    </materialDesign:DialogHost>
+    
+</ma:MetroWindow>

@@ -1,0 +1,5 @@
+C:\EOG Apps\Economics Apps\Common\Dev\EOG.iEconomics.ModernShell\_ExternalComponents\bin\Debug\_ExternalComponents.dll
+C:\EOG Apps\Economics Apps\Common\Dev\EOG.iEconomics.ModernShell\_ExternalComponents\bin\Debug\_ExternalComponents.pdb
+C:\EOG Apps\Economics Apps\Common\Dev\EOG.iEconomics.ModernShell\_ExternalComponents\obj\Debug\_ExternalComponents.csprojResolveAssemblyReference.cache
+C:\EOG Apps\Economics Apps\Common\Dev\EOG.iEconomics.ModernShell\_ExternalComponents\obj\Debug\_ExternalComponents.dll
+C:\EOG Apps\Economics Apps\Common\Dev\EOG.iEconomics.ModernShell\_ExternalComponents\obj\Debug\_ExternalComponents.pdb

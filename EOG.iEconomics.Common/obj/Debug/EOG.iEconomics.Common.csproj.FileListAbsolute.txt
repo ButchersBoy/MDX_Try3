@@ -1,0 +1,5 @@
+C:\EOG Apps\Economics Apps\Common\Dev\EOG.iEconomics.ModernShell\EOG.iEconomics.Common\bin\Debug\EOG.iEconomics.Common.dll
+C:\EOG Apps\Economics Apps\Common\Dev\EOG.iEconomics.ModernShell\EOG.iEconomics.Common\bin\Debug\EOG.iEconomics.Common.pdb
+C:\EOG Apps\Economics Apps\Common\Dev\EOG.iEconomics.ModernShell\EOG.iEconomics.Common\obj\Debug\EOG.iEconomics.Common.csprojResolveAssemblyReference.cache
+C:\EOG Apps\Economics Apps\Common\Dev\EOG.iEconomics.ModernShell\EOG.iEconomics.Common\obj\Debug\EOG.iEconomics.Common.dll
+C:\EOG Apps\Economics Apps\Common\Dev\EOG.iEconomics.ModernShell\EOG.iEconomics.Common\obj\Debug\EOG.iEconomics.Common.pdb

@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ma="http://metro.mahapps.com/winfx/xaml/controls"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:resources="clr-namespace:EOG.iEconomics.ModernShell.Resources">
+    
+    <SolidColorBrush x:Key="TitleBarBackgroundBrush">#2D3147</SolidColorBrush>
+
+    <FontFamily x:Key="DefaultFont">Roboto Regular</FontFamily>
+
+    <system:Double x:Key="FontSize-Smallest">8</system:Double>
+    <system:Double x:Key="FontSize-Smaller">10</system:Double>
+    <system:Double x:Key="FontSize-Normal">12</system:Double>
+    <system:Double x:Key="FontSize-Large">13.333</system:Double>
+    <system:Double x:Key="FontSize-Larger">16</system:Double>
+    <system:Double x:Key="FontSize-Largest">20</system:Double>
+    <system:Double x:Key="FontSize-VeryLarge">36</system:Double>
+
+    <Style TargetType="{x:Type ma:WindowButtonCommands}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ShowTitleBar, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ma:MetroWindow}}}"
+                         Value="True">
+                <Setter Property="Foreground"
+                        Value="White" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style TargetType="TextBlock" x:Key="ViewHeaderStyle">
+        <Setter Property="Foreground" Value="DimGray"/>
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontFamily" Value="Roboto Regular"/>
+    </Style>
+
+    <Style TargetType="TextBlock"
+           x:Key="ViewSubHeaderStyle" BasedOn="{StaticResource ViewHeaderStyle}">
+        <Setter Property="FontSize"
+                Value="18" />
+    </Style>
+    <resources:TextDecorationConverter x:Key="TextDecConverter"/>
+
+</ResourceDictionary>
